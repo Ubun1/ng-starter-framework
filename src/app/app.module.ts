@@ -5,10 +5,12 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import {FwModule} from "../fw/fw.module";
+import { TitleBarComponent } from '../fw/title-bar/title-bar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TitleBarComponent
   ],
   imports: [
     BrowserModule,

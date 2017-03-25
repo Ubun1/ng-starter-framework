@@ -4,6 +4,7 @@ import {FrameworkBodyComponent} from "./framework-body/framework-body.component"
 import {ContentComponent} from "./content/content.component";
 import {TitleBarComponent} from "./title-bar/title-bar.component";
 import {FramewokConfigService} from "./services/framewok-config.service";
+import {TopBarComponent} from "./top-bar/top-bar.component";
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import {FramewokConfigService} from "./services/framewok-config.service";
     FrameworkBodyComponent,
     ContentComponent,
     TitleBarComponent,
+    TopBarComponent,
   ],
   exports: [
     FrameworkBodyComponent

@@ -2,20 +2,29 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export class FramewokConfigService {
-  config: ConfigModel;
+  private _config: ConfigModel;
 
+  get config() : ConfigModel {
+    return this._config;
+  }
   constructor() {
-    this.config = {
+    this._config = {
       showLanguageSelector   : true,
       showStatusBarBreakpoint: 0,
       showStatusbar          : true,
       showUserControls       : true,
-      socialIcons            : [{}]
+      socialIcons            : [
+        {
+          link : "facebook.com",
+          alt : "no image",
+          imageFile : ""
+        }
+      ]
     };
   }
 
   configure(settings: ConfigModel): void {
-    this.config = Object.assign(this.config, settings)
+    this._config = Object.assign(this.config, settings)
   }
 }
 

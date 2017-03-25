@@ -1,0 +1,16 @@
+ <a *ngFor="let icon of configService.config.socialIcons"
+    [href]="icon?.link"
+    [title]="icon?.alt">
+   <img class="top-image"
+        [src]="icon?.imageFile"
+        [alt]="icon?.alt">
+ </a>
+
+ <div *ngIf="configService.config.showLanguageSelector">
+   <img src="" alt="Flag" class="flag-image">
+   <span>BAJAN</span><span class="glyphicon glyphicon-chevron-down"></span>
+ </div>
+
+ <div *ngIf="configService.config.showUserControls">
+   <span>SIGN IN</span>
+ </div>

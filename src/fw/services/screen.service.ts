@@ -1,12 +1,11 @@
 import {Injectable} from "@angular/core";
 import {Observable, Subject} from "rxjs";
-import {serializePaths} from "@angular/router/src/url_tree";
 
 @Injectable()
 export class ScreenService {
 
   private _resizeSource: Subject<null>;
-  private _largeBreakePoints: number = 800;
+  private _largeBreakePoint: number = 800;
   private _screenWidth: number = 1000;
   private _screenHeigh: number = 800;
 
@@ -15,14 +14,14 @@ export class ScreenService {
   }
 
   get screenWidth(): number {
-    return this._sreenWidth;
+    return this._screenWidth;
   }
   get screenHeigh(): number {
     return this._screenHeigh;
   }
 
-  get largeBreakePoints(): number {
-    return this._largeBreakePoints;
+  get largeBreakePoint(): number {
+    return this._largeBreakePoint;
   }
 
   constructor() {
@@ -30,8 +29,8 @@ export class ScreenService {
       this._resizeSource = new Subject<null>();
       this._screenHeigh = window.innerHeight;
       this._screenWidth = window.innerWidth;
-      window.addEventListener('recize', (event) => {
-        this._sreenWidth = window.innerWidth;
+      window.addEventListener('resize', (event) => {
+        this._screenWidth = window.innerWidth;
         this._screenHeigh = window.innerHeight;
         this._resizeSource.next();
       })
@@ -40,7 +39,7 @@ export class ScreenService {
       //default values for heigh and weigh
     }
   }
-    isLarge() : boolean {
-      return this._screenWidth >= this._largeBreakePoints;
+    tisLarge() : boolean {
+      return this._screenWidth >= this._largeBreakePoint;
     }
 }

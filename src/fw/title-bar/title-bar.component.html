@@ -1,6 +1,16 @@
-<div class="title-bar user-title-bar"><img src="asserts/logo.png" alt="Green Nations Logo">
+<div *ngIf="screenService.isLarge()" class="title-bar user-title-bar"><img src="asserts/logo.png"
+                                                                           alt="Green Nations Logo">
   <div class="menu-area">
-  <fw-top-bar></fw-top-bar>
+    <fw-top-bar></fw-top-bar>
     <!--meny-->
   </div>
+</div>
+
+<div *ngIf="!screenService.isLarge()" class="title-bar-small">
+  <span class="glyphicon glyphicon-menu-hamburger">
+  </span>
+  <div class="small-image-holder">
+    <img src="asserts/logo.png" alt="small logo">
+  </div>
+  <span class="glyphicon glyphicon-option-vertical"></span>
 </div>

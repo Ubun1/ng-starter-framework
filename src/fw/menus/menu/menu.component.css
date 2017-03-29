@@ -5,6 +5,15 @@
   flex-grow: 1;
 }
 
+:host(.verticalMenu) {
+  display: inline-block;
+  width: 200px;
+  padding-left: 4px;
+  flex-grow:0;
+  background: #555;
+  overflow: auto;
+}
+
 ul {
   list-style-type: none;
   margin:0;

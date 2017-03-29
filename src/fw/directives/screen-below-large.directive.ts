@@ -16,7 +16,7 @@ export class ScreenBelowLarge implements OnDestroy{
               private template: TemplateRef<Object>,
               private screenSerive: ScreenService
   ) {
-    this._screenSubsription = screenSerive.resize$.subscribe(() => this._hasView = false);
+    this._screenSubsription = screenSerive.resize$.subscribe(() => this.screenLarge = false);
   }
 
   @Input()

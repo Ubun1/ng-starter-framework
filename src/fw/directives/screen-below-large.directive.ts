@@ -3,7 +3,7 @@ import {Directive, Input, OnDestroy, TemplateRef, ViewContainerRef} from "@angul
 import {ScreenService} from "../services/screen.service";
 import {Subscription} from "rxjs";
 @Directive({
-  selector: '[screenLarge]'
+  selector: '[screenBelowLarge]'
 })
 export class ScreenBelowLarge implements OnDestroy{
   ngOnDestroy(): void {

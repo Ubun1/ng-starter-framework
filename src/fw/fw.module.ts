@@ -9,6 +9,9 @@ import {StatusBarComponent} from "./status-bar/status-bar.component";
 import {ScreenService} from "./services/screen.service";
 import {ScreenLarge} from "./directives/screen-large.directive";
 import {ScreenBelowLarge} from "./directives/screen-below-large.directive";
+import {MenuItem, MenuService} from "./services/menu.service";
+import {MenuComponent} from "./menus/menu/menu.component";
+import {MenuItemComponent} from "./menus/menu-item/menu-item.component";
 
 @NgModule({
   imports: [
@@ -22,6 +25,8 @@ import {ScreenBelowLarge} from "./directives/screen-below-large.directive";
     StatusBarComponent,
     ScreenLarge,
     ScreenBelowLarge,
+    MenuComponent,
+    MenuItemComponent,
   ],
   exports: [
     FrameworkBodyComponent
@@ -29,6 +34,7 @@ import {ScreenBelowLarge} from "./directives/screen-below-large.directive";
   providers: [
     FramewokConfigService,
     ScreenService,
+    MenuService,
   ]
 })
 export class FwModule { }

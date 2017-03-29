@@ -8,7 +8,8 @@
 </div>
 
 <div *screenBelowLarge class="title-bar-small">
-  <span class="glyphicon glyphicon-menu-hamburger">
+  <span class="glyphicon glyphicon-menu-hamburger"
+        (click)="menuService.toggleLeftSideMenu()">
   </span>
   <div class="small-image-holder">
     <img src="asserts/logo.png" alt="small logo">

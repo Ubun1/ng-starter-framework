@@ -39,7 +39,7 @@ export class ScreenService {
       //default values for heigh and weigh
     }
   }
-    tisLarge() : boolean {
+    isLarge() : boolean {
       return this._screenWidth >= this._largeBreakePoint;
     }
 }

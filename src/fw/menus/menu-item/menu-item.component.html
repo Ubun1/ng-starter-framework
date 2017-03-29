@@ -1,9 +1,8 @@
 <div class="menu-item"
      [routerLink]="item.route"
      routerLinkActive="router-link-active"
-     [ngClass]="{'verticalMenu': menuService.isVertical}">
+     [ngClass]="{'verticalMenu': menuService.isVertical}"
+    (click)="menuService.showLeftSideMenu = false">
   <span class="glyphicon {{item.icon}}"></span>
-
   <span>{{item.text.toUpperCase()}}</span>
-
 </div>

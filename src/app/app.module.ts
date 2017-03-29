@@ -6,19 +6,20 @@ import {HttpModule} from '@angular/http';
 import {AppComponent} from './app.component';
 import {FwModule} from "../fw/fw.module";
 import {FramewokConfigService} from "../fw/services/framewok-config.service";
-import {TopBarComponent} from '../fw/top-bar/top-bar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { CountriesComponent } from './countries/countries.component';
 import { SettingsComponent } from './settings/settings.component';
 import {RouterModule} from "@angular/router";
 import {appRoutes} from "./app.routes";
+import { CountryDetailComponent } from './country-detail/country-detail.component';
+import { CountryMaintComponent } from './country-maint/country-maint.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    CountriesComponent,
-    SettingsComponent
+    SettingsComponent,
+    CountryDetailComponent,
+    CountryMaintComponent
   ],
   imports     : [
     BrowserModule,

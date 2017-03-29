@@ -2,7 +2,16 @@
      [routerLink]="item.route"
      routerLinkActive="router-link-active"
      [ngClass]="{'verticalMenu': menuService.isVertical}"
-    (click)="menuService.showLeftSideMenu = false">
+     (click)="menuService.showLeftSideMenu = false">
   <span class="glyphicon {{item.icon}}"></span>
   <span>{{item.text.toUpperCase()}}</span>
 </div>
+<fw-popup-menu
+  *ngIf="mouseInPopup || mouseInItem"
+  [menu]="item.submenu"
+  [ngClass]="{'vertical-menu': menuService.isVertical}"
+  (mouseenter)="onPopupMouseIn($event)"
+  (mouseleave)="onPopupMouseOout($event)"
+  [style.left.px]="popupLeft"
+  [style.top.px]="popupTop"
+></fw-popup-menu>

@@ -64,7 +64,7 @@ export const initialMenuItems: Array<MenuItem> = [
       {
         text: 'Country list',
         icon: 'glyphicon-th-list',
-        route: 'country-main',
+        route: 'country-maint',
         submenu: null
       },
       {

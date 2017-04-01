@@ -9,6 +9,7 @@ export class ScreenBelowLarge implements OnDestroy{
   ngOnDestroy(): void {
     this._screenSubsription.unsubscribe();
   }
+  //TODO some comments
   private _hasView = false;
   private _screenSubsription: Subscription;
 

@@ -61,3 +61,6 @@ span {
   background-color: green;
 }
 
+:host(.vertical-menu.in-popup) {
+  padding-left: 16px;
+}

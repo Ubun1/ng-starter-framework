@@ -1,6 +1,6 @@
-import {Component, HostBinding, HostListener, Input, OnInit} from '@angular/core';
+import {Component, ElementRef, HostBinding, HostListener, Input, OnInit, Renderer} from '@angular/core';
 import {MenuItem, MenuService} from "../../services/menu.service";
-import {Router} from "@angular/router";
+import {NavigationEnd, Router} from "@angular/router";
 
 @Component({
   selector: 'fw-menu-item',
@@ -11,17 +11,23 @@ export class MenuItemComponent implements OnInit {
   @Input() item: MenuItem;
   @HostBinding('class.parent-is-popup')
   @Input() parentIsPopup = true;
-
-  asactiveRoute = false;
+  isAsactiveRoute = false;
 
   mouseInItem = false;
   mouseInPopup = false;
   popupLeft = 0;
   popupTop = 34;
-  constructor(private router: Router,private menuService: MenuService) { }
+  constructor(private router: Router,private menuService: MenuService,
+  private el: ElementRef, private renderer: Renderer) { }
 
 
   ngOnInit() {
+    this.checkActiveRoute(this.router.url);
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.checkActiveRoute(event.url);
+      }
+    });
   }
 
   onPopupMouseEnter(event): void {
@@ -53,5 +59,24 @@ export class MenuItemComponent implements OnInit {
         }
       }
     }
+  }
+  @HostListener('click', ['$event']) onClick(event) : void {
+    event.stopPropagation();
+    if (this.item.submenu) {
+      if (this.menuService.isVertical) {
+        this.mouseInPopup = !this.mouseInPopup;
+      }
+    }
+    else if (this.item.route) {
+      let newEvent = new MouseEvent('mouseleave', {bubbles: true});
+      this.renderer.invokeElementMethod(
+        this.el.nativeElement, 'dispatchEvent', [newEvent]);
+
+      this.router.navigate(['/' + this.item.route]);
+    }
+  }
+
+ private checkActiveRoute(route: string) {
+    this.isAsactiveRoute = route === '/' + this.item.route;
   }
 }

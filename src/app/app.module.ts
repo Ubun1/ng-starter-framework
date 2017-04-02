@@ -13,13 +13,14 @@ import {appRoutes} from "./app.routes";
 import { CountryDetailComponent } from './country-detail/country-detail.component';
 import { CountryMaintComponent } from './country-maint/country-maint.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     SettingsComponent,
     CountryDetailComponent,
-    CountryMaintComponent
+    CountryMaintComponent,
   ],
   imports     : [
     BrowserModule,

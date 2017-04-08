@@ -12,6 +12,7 @@ import {RouterModule} from "@angular/router";
 import {appRoutes} from "./app.routes";
 import { CountryDetailComponent } from './country-detail/country-detail.component';
 import { CountryMaintComponent } from './country-maint/country-maint.component';
+import { AuthenticatedUserComponent } from './authenticated-user/authenticated-user.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { CountryMaintComponent } from './country-maint/country-maint.component';
     SettingsComponent,
     CountryDetailComponent,
     CountryMaintComponent,
+    AuthenticatedUserComponent,
   ],
   imports     : [
     BrowserModule,
